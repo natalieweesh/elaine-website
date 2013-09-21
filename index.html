@@ -110,7 +110,7 @@
       <li class="def">
         <h3 class="header">Features / Profiles</h3>
         <ul>
-          <li>link 1</li>
+          <li><a href="http://google.com">link 1</a></li>
           <li>link 2</li>
         </ul>  
       </li>
@@ -141,12 +141,11 @@
 
 
   </section>
-  </div> <!-- end div wrapper -->
+  </div> <!-- end div wrh3.headerapper -->
   <script>
     $('ol > li > ul').hide();
-    $('ol > li').click(function(){
-      $(this).find('ul').slideToggle('linear');
-
+    $('ol > .def > .header').click(function(){
+      $(this).parent().find('ul').slideToggle('linear');
     });
   </script>
 </body>
