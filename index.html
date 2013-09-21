@@ -78,7 +78,7 @@
       margin: 0 15px;
       line-height: 55px;
     }
-    #navbar > ul > li > a:hover {
+    #navbar > ul > li:hover > a {
       color: #000000;
 
     }
@@ -112,6 +112,11 @@
       margin: 20px 0;
 
     }
+    .def > ul > li > p {
+      text-indent: 1em;
+      color: blue;
+
+    }
 
   </style>
 
@@ -123,7 +128,7 @@
       <li><a href="#">Web</a></li>
       <li><a href="#">Images</a></li>
       <li id="social-links">
-        <a href="#">More</a>
+        <a href="#">More ▾</a>
         <ul class="dropdown">
           <li><a href="#">facebook</a></li>
           <li><a href="#">google+</a></li>
@@ -146,8 +151,14 @@
       <li class="def">
         <h3 class="header" style="width: 160px;">Features / Profiles</h3>
         <ul>
-          <li><a href="http://google.com">Google</a></li>
-          <li><a href="http://bing.com">Bing</a></li>
+          <li>
+            <span>Google</span> <a href="http://google.com">❯</a>
+            <p>description of this link goes here</p>
+          </li>
+          <li>
+            <span>Bing</span> <a href="http://bing.com">❯</a></h4>
+            <p>description of this link goes here here here</p>
+          </li>
         </ul>  
       </li>
       <li class="def">
@@ -187,6 +198,10 @@
     $('#navbar > ul > li > a').click(function(){
       $('#navbar > ul > li > a').css({'border-bottom': 'none', 'color': 'gray'});
       $(this).css({'border-bottom': '3px solid #CD5A45', 'color': '#CD5A45'});
+    });
+    $('.def > ul > li > p').hide();
+    $('.def > ul > li > span').click(function(){
+      $(this).parent().find('p').slideToggle();
     });
 
 
