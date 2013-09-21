@@ -10,9 +10,10 @@
 
   <style>
     body {
-      font-family: 'Source Sans Pro', sans-serif;
+      font-family: 'arial', sans-serif;
       color: gray;
-      font-weight: 300;
+      font-weight: normal;
+      font-size: 14px;
 
     }
     body, ul, li, a, h1, h2, h3, p {
@@ -27,17 +28,17 @@
       display: block;
     }
     .main {
-      color: #000000;
       margin: 20px 0;
-      font-weight: normal;
+      color: #000000;
     }
     .main > h1 {
       font-size: 30px;
-      font-weight: 700;
+      font-weight: 500;
+      margin-top: 40px;
     }
     .main > h2 {
-      font-family: sans-serif;
-      font-size: 16px;
+      font-size: 18px;
+      margin-top: 5px;
       font-weight: normal;
     }
     a {
@@ -45,7 +46,7 @@
       color: gray;
     }
     a:hover {
-      color: red;
+      color: #CD5A45;
     }
     ol, .header {
       font-weight: normal;
@@ -64,7 +65,7 @@
       border-bottom: 1px solid gray;
       width: 100%;
       position: relative;
-      margin-bottom: 20px;
+      margin-bottom: 100px;
 
     }
     #navbar > ul > li {
@@ -73,10 +74,15 @@
     }
     #navbar > ul > li > a {   
       text-align: center;
-      padding: 35px 35px 0;
-      line-height: 70px;
+      padding: 15px 10px 12px;
+      margin: 0 15px;
+      line-height: 55px;
     }
-    .def:hover {
+    #navbar > ul > li > a:hover {
+      color: #000000;
+
+    }
+    .header:hover {
       cursor: pointer;
 
     }
@@ -85,6 +91,28 @@
       clear: both;
       content: "";
     }
+    .dropdown {
+      display: none;
+      position: absolute;
+      left: 190px;
+      top: 50px;
+      background: #ffffff;
+      border: 1px solid gray;
+      border-top: none;
+      width: 85px;
+    }
+    #navbar > ul > li:hover > .dropdown {
+      display: block;
+    }
+    .dropdown > li > a {
+      display: block;
+      padding: 5px 10px;
+    }
+    #def-text {
+      margin: 20px 0;
+
+    }
+
   </style>
 
 </head>
@@ -94,41 +122,50 @@
     <ul class="clearfix">
       <li><a href="#">Web</a></li>
       <li><a href="#">Images</a></li>
-      <li><a href="#">More</a></li>
+      <li id="social-links">
+        <a href="#">More</a>
+        <ul class="dropdown">
+          <li><a href="#">facebook</a></li>
+          <li><a href="#">google+</a></li>
+          <li><a href="#">instagram</a></li>
+          <li><a href="#">tumblr</a></li>
+          <li><a href="#">linkedin</a></li>
+        </ul>
+      </li>
     </ul>
   </div>
 
   <section id="definition">
     <div class="main">
-      <h1>elaine 윤정 lee</h1>
+      <h1>e·laine 윤정 lee</h1>
       <h2>/i-'lān yōōn-jeoŋ 'lē/</h2>
-      <p><i>noun:</i> someone who likes writing</p>
+      <p id="def-text"><i>noun:</i> aspiring editor</p>
     </div>
 
     <ol>
       <li class="def">
-        <h3 class="header">Features / Profiles</h3>
+        <h3 class="header" style="width: 160px;">Features / Profiles</h3>
         <ul>
           <li><a href="http://google.com">Google</a></li>
           <li><a href="http://bing.com">Bing</a></li>
         </ul>  
       </li>
       <li class="def">
-        <h3 class="header">Fashion Collection Reviews</h3>
+        <h3 class="header" style="width: 230px;">Fashion Collection Reviews</h3>
         <ul>
           <li><a href="http://github.com">Github</a></li>
           <li><a href="http://facebook.com">Facebook</a></li>
         </ul>  
       </li>
       <li class="def">
-        <h3 class="header">Designer / Celebrity Interviews</h3>
+        <h3 class="header" style="width: 250px;">Designer / Celebrity Interviews</h3>
         <ul>
           <li><a href="http://cnn.com">CNN</a></li>
           <li><a href="http://huffingtonpost.com">HuffPo</a></li>
         </ul>  
       </li>
       <li class="def">
-        <h3 class="header">Architecture / Design Coverage</h3>
+        <h3 class="header" style="width: 260px;">Architecture / Design Coverage</h3>
         <ul>
           <li><a href="http://buzzfeed.com">Buzzfeed</a></li>
           <li><a href="http://poorlydrawnlines.com">Poorly Drawn Lines</a></li>
@@ -142,10 +179,17 @@
   </section>
   </div> <!-- end div wrh3.headerapper -->
   <script>
+    $('#navbar > ul > li:first-child > a').css({'border-bottom': '3px solid #CD5A45', 'color': '#CD5A45'});
     $('ol > li > ul').hide();
     $('ol > .def > .header').click(function(){
       $(this).parent().find('ul').slideToggle('linear');
     });
+    $('#navbar > ul > li > a').click(function(){
+      $('#navbar > ul > li > a').css({'border-bottom': 'none', 'color': 'gray'});
+      $(this).css({'border-bottom': '3px solid #CD5A45', 'color': '#CD5A45'});
+    });
+
+
   </script>
 </body>
 </html>
