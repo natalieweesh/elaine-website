@@ -101,9 +101,11 @@
       border-top: none;
       width: 85px;
     }
+    /*
     #navbar > ul > li:hover > .dropdown {
       display: block;
     }
+    */
     .dropdown > li > a {
       display: block;
       padding: 5px 10px;
@@ -128,7 +130,7 @@
       <li><a href="#">Web</a></li>
       <li><a href="#">Images</a></li>
       <li id="social-links">
-        <a href="#">More ▾</a>
+        <a class="no-underline">More ▾</a>
         <ul class="dropdown">
           <li><a href="#">facebook</a></li>
           <li><a href="#">google+</a></li>
@@ -197,13 +199,19 @@
     });
     $('#navbar > ul > li > a').click(function(){
       $('#navbar > ul > li > a').css({'border-bottom': 'none', 'color': 'gray'});
-      $(this).css({'border-bottom': '3px solid #CD5A45', 'color': '#CD5A45'});
+      if (!$(this).hasClass('no-underline')) {
+        $(this).css({'border-bottom': '3px solid #CD5A45', 'color': '#CD5A45'});
+      }
     });
     $('.def > ul > li > p').hide();
     $('.def > ul > li > span').click(function(){
       $(this).parent().find('p').slideToggle();
     });
+    $('#social-links').click(function(){
 
+      $('.dropdown').slideToggle();
+
+    });
 
   </script>
 </body>
