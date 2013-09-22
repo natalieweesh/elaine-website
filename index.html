@@ -3,7 +3,7 @@
 <head>
 
   <meta charset="UTF-8">
-
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700' rel='stylesheet' type='text/css'>
 
@@ -78,10 +78,6 @@
       margin: 0 15px;
       line-height: 55px;
     }
-    #navbar > ul > li:hover > a {
-      color: #000000;
-
-    }
     .header:hover {
       cursor: pointer;
 
@@ -110,9 +106,15 @@
       cursor: pointer;
       color: #000000;
     }
+    #navbar li:hover > a {
+      color: #000000;
+    }
     .dropdown > li > a {
       display: block;
       padding: 5px 10px;
+    }
+    .dropdown > li > a:hover {
+      color: #CD5A45;
     }
     #def-text {
       margin: 20px 0;
@@ -214,7 +216,6 @@
     $('#social-links').click(function(){
 
       $('.dropdown').slideToggle();
-
     });
 
   </script>
