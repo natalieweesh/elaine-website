@@ -151,7 +151,7 @@
   <div id="navbar">
     <ul class="clearfix">
       <li><a class="show-main" href="">Web</a></li>
-      <li><a href="#">Images</a></li>
+      <li><a class="show-pics" href="#">Images</a></li>
       <li id="social-links">
         <a>More ▾</a>
         <ul class="dropdown">
@@ -270,12 +270,13 @@
     $('.show-pics').click(function(){
       $('#definition').css('visibility', 'hidden');
       $('#travel').css('display','block');
-
+      $('#navbar > ul > li > a').css({'border-bottom': 'none', 'color': 'gray'});
+      $('#navbar > ul > li > a.show-pics').css({'border-bottom': '3px solid #CD5A45', 'color': '#CD5A45'});
     });
     $('.show-main').click(function(){
       $('#definition').css('visibility', 'visible');
       $('#travel').css('display','none');
-
+      
     });
 
   </script>
