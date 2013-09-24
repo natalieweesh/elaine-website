@@ -4,7 +4,9 @@
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="fancybox/source/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+  <script type="text/javascript" src="fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
 
 
   <style>
@@ -13,7 +15,6 @@
       color: gray;
       font-weight: normal;
       font-size: 14px;
-
     }
     body, ul, li, a, h1, h2, h3, p {
       border: 0;
@@ -33,7 +34,6 @@
     .main > h1 {
       font-size: 30px;
       font-weight: 500;
-      margin-top: 40px;
     }
     .main > h2 {
       font-size: 18px;
@@ -44,7 +44,10 @@
       text-decoration: none;
       color: gray;
     }
-    a:hover {
+    #def-text a {
+      color: #000;
+    }
+    a:hover, #def-text a:hover {
       color: #CD5A45;
     }
     ol, .header {
@@ -87,14 +90,12 @@
       content: "";
     }
     .dropdown {
+      z-index: 1000;
       display: none;
       position: absolute;
-      left: 190px;
-      top: 50px;
-      background: #ffffff;
-      border: 1px solid gray;
-      border-top: none;
-      width: 85px;
+      left: 226px;
+      top: 55px;
+      width: 38px;
     }
     /*
     #navbar > ul > li:hover > .dropdown {
@@ -110,7 +111,7 @@
     }
     .dropdown > li > a {
       display: block;
-      padding: 5px 10px;
+      width: 30px;
     }
     .dropdown > li > a:hover {
       color: #CD5A45;
@@ -130,6 +131,17 @@
     #definition {
       padding: 0 20px 20px;
     }
+    #travel {
+      top: 100px;
+      position: absolute;
+    }
+    .square {
+      max-width: 200px;
+      max-height: 200px;
+      overflow: hidden;
+      float: left;
+      margin: 5px;
+    }
 
   </style>
 
@@ -138,16 +150,16 @@
   <div id="wrapper">
   <div id="navbar">
     <ul class="clearfix">
-      <li><a href="#">Web</a></li>
+      <li><a class="show-main" href="">Web</a></li>
       <li><a href="#">Images</a></li>
       <li id="social-links">
-        <a class="no-underline">More ▾</a>
+        <a>More ▾</a>
         <ul class="dropdown">
-          <li><a href="#">facebook</a></li>
-          <li><a href="#">google+</a></li>
-          <li><a href="#">instagram</a></li>
-          <li><a href="#">tumblr</a></li>
-          <li><a href="#">linkedin</a></li>
+          <li><a href="#"><img src="images/Facebook.png" alt="facebook" width="25" height="25"></a></li>
+          <li><a href="#"><img src="images/Google+.png" alt="google+" width="25" height="25"></a></li>
+          <li><a href="#"><img src="images/Instagram.png" alt="instagram" width="25" height="25"></a></li>
+          <li><a href="#"><img src="images/Tumblr.png" alt="tumblr" width="25" height="25"></a></li>
+          <li><a href="#"><img src="images/LinkedIn.png" alt="linkedin" width="25" height="25"></a></li>
         </ul>
       </li>
     </ul>
@@ -157,7 +169,7 @@
     <div class="main">
       <h1>e·laine <span class="smaller">윤정</span> lee</h1>
       <h2>/i-'lān yōōn-jeoŋ 'lē/</h2>
-      <p id="def-text"><i>aspring editor; <a href="./travel.html">traveler</a>; writer at <a href="http://www.selectism.com/author/elainelee/">selectism</a></i></p>
+      <p id="def-text"><i>aspring editor; <a class="show-pics">traveler</a>; writer at <a href="http://www.selectism.com/author/elainelee/">selectism</a></i></p>
     </div>
 
     <ol>
@@ -165,11 +177,11 @@
         <h3 class="header" style="width: 160px;">Features / Profiles</h3>
         <ul>
           <li>
-            <span>Google</span> <a href="http://google.com">❯</a>
+            <a href="http://google.com">Link 1</a>
             <p>description of this link goes here</p>
           </li>
           <li>
-            <span>Bing</span> <a href="http://bing.com">❯</a></h4>
+            <a href="http://bing.com">Link 2</a>
             <p>description of this link goes here here here</p>
           </li>
         </ul>  
@@ -200,27 +212,70 @@
 
 
 
-  </section>
-  </div> <!-- end div wrh3.headerapper -->
+  </section> <!-- end section definition -->
+
+  <section id="travel">
+    <p>Travel pics</p>
+    <div class="square"><a class="pic_group" title="here is a picture" rel="pic_group" href="travel_images/image1.jpeg"><img src="travel_images/image1.jpeg" alt=""></a></div>
+    <div class="square"><a class="pic_group" title="here is another pic" rel="pic_group" href="travel_images/image2.jpg"><img src="travel_images/image2.jpg" alt=""></a></div>
+    <div class="square"><a class="pic_group" title="here is a third pic" rel="pic_group" href="travel_images/image3.jpeg"><img src="travel_images/image3.jpeg" alt=""></a></div>
+    <div class="square"><a class="pic_group" title="here is a fourth pic" rel="pic_group" href="travel_images/image4.jpeg"><img src="travel_images/image4.jpeg" alt=""></a></div>
+    <div class="square"><a class="pic_group" title="here is another kitten" rel="pic_group" href="travel_images/image5.jpeg"><img src="travel_images/image5.jpeg" alt=""></a></div>
+    <div class="square"><a class="pic_group" title="kitties!" rel="pic_group" href="travel_images/image6.jpeg"><img src="travel_images/image6.jpeg" alt=""></a></div>
+    <div class="square"><a class="pic_group" title="giant kitty" rel="pic_group" href="travel_images/image7.jpeg"><img src="travel_images/image7.jpeg" alt=""></a></div>
+
+  </section> <!-- end section travel -->
+
+  </div> <!-- end div wrrapper -->
   <script>
+
+    $(document).ready(function() {
+
+
+      /* Apply fancybox to multiple items */
+      $('a.pic_group > img').css({'width': 'auto', 'height': '200px', });
+      $("a.pic_group").fancybox({
+        'transitionIn'  : 'fade',
+        'transitionOut' : 'fade',
+        'speedIn'   : 600, 
+        'speedOut'    : 200, 
+        'overlayShow' : true,
+        'autoScale' : true,
+         helpers : {
+            title : {'type': 'inside'}   
+        }
+      });
+      
+    });
+
     $('#navbar > ul > li:first-child > a').css({'border-bottom': '3px solid #CD5A45', 'color': '#CD5A45'});
+    $('#travel').css('display', 'none');
     $('ol > li > ul').hide();
     $('ol > .def > .header').click(function(){
       $(this).parent().find('ul').slideToggle('linear');
     });
     $('#navbar > ul > li > a').click(function(){
       $('#navbar > ul > li > a').css({'border-bottom': 'none', 'color': 'gray'});
-      if (!$(this).hasClass('no-underline')) {
-        $(this).css({'border-bottom': '3px solid #CD5A45', 'color': '#CD5A45'});
-      }
+      $(this).css({'border-bottom': '3px solid #CD5A45', 'color': '#CD5A45'});
     });
-    $('.def > ul > li > p').hide();
+/*    $('.def > ul > li > p').hide();
     $('.def > ul > li > span').click(function(){
       $(this).parent().find('p').slideToggle();
     });
+*/
     $('#social-links').click(function(){
 
       $('.dropdown').slideToggle();
+    });
+    $('.show-pics').click(function(){
+      $('#definition').css('visibility', 'hidden');
+      $('#travel').css('display','block');
+
+    });
+    $('.show-main').click(function(){
+      $('#definition').css('visibility', 'visible');
+      $('#travel').css('display','none');
+
     });
 
   </script>
