@@ -166,6 +166,7 @@
 </head>
 <body>
   <div id="wrapper">
+  <footer style="position: fixed; bottom: 0; right: 0;"><a target="_blank" href="http://www.nataliewee.com">site made by <img src="images/NW1.gif" width="20" height="20" alt="NW"></a></footer>
   <div id="navbar">
     <ul class="clearfix">
       <li><a class="show-main" href="#">Web</a></li>
@@ -247,7 +248,6 @@
     
 
     <br>
-    <footer><a target="_blank" href="http://www.nataliewee.com">made with &#x2661; by <img src="images/NW1.gif" width="20" height="20" alt="NW"></a></footer>
 
   </section> <!-- end section definition -->
 
@@ -261,8 +261,6 @@
     <div class="square"><a class="pic_group" title="kitties!" rel="pic_group" href="travel_images/image6.jpeg"><img src="travel_images/image6.jpeg" alt=""></a></div>
     <div class="square"><a class="pic_group" title="giant kitty" rel="pic_group" href="travel_images/image7.jpeg"><img src="travel_images/image7.jpeg" alt=""></a></div>
     
-    <br>
-    <footer><a target="_blank" href="http://www.nataliewee.com">made with &#x2661; by <img src="images/NW1.gif" width="20" height="20" alt="NW"></a></footer>
   </section> <!-- end section travel -->
   </div> <!-- end div wrapper -->
   <script>
@@ -271,7 +269,7 @@
 
 
       /* Apply fancybox to multiple items */
-      $('a.pic_group > img').css({'width': 'auto', 'height': '200px', });
+      $('a.pic_group > img').css({'width': 'auto', 'height': '200px'});
       $("a.pic_group").fancybox({
         'transitionIn'  : 'fade',
         'transitionOut' : 'fade',
@@ -328,7 +326,9 @@
 
       $(this).parent().find('p').slideToggle();
     });
-
+    
+    
+   
     
 
   </script>
