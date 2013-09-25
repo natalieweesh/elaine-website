@@ -4,6 +4,7 @@
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <script type="text/javascript" src="jquery.js"></script>
   <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <link rel="stylesheet" href="fancybox/source/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
   <script type="text/javascript" src="fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
@@ -80,7 +81,7 @@
       margin: 0 15px;
       line-height: 55px;
     }
-    .header:hover {
+    .header:hover, .show-pics:hover {
       cursor: pointer;
 
     }
@@ -121,9 +122,13 @@
 
     }
     .def > ul > li > p {
-      text-indent: 1em;
+      margin-left: 1em;
       color: blue;
 
+    }
+    .def > ul > li > span:hover {
+      cursor: pointer;
+      color: #CD5A45;
     }
     .smaller {
       font-size: 24px;
@@ -142,6 +147,17 @@
       float: left;
       margin: 5px;
     }
+    footer {
+      font-size: 11px;
+      line-height: 5px;
+      display: block;
+      clear: both;
+      text-align: right;
+      padding: 60px 0 5px;
+    }
+    footer img {
+      vertical-align: -90%;
+    }
 
   </style>
 
@@ -150,26 +166,26 @@
   <div id="wrapper">
   <div id="navbar">
     <ul class="clearfix">
-      <li><a class="show-main" href="">Web</a></li>
+      <li><a class="show-main" href="#">Web</a></li>
       <li><a class="show-pics" href="#">Images</a></li>
       <li id="social-links">
         <a>More ▾</a>
         <ul class="dropdown">
-          <li><a href="#"><img src="images/Facebook.png" alt="facebook" width="25" height="25"></a></li>
-          <li><a href="#"><img src="images/Google+.png" alt="google+" width="25" height="25"></a></li>
-          <li><a href="#"><img src="images/Instagram.png" alt="instagram" width="25" height="25"></a></li>
-          <li><a href="#"><img src="images/Tumblr.png" alt="tumblr" width="25" height="25"></a></li>
-          <li><a href="#"><img src="images/LinkedIn.png" alt="linkedin" width="25" height="25"></a></li>
+          <li><a href="#" target="_blank"><img src="images/Facebook.png" alt="facebook" width="25" height="25"></a></li>
+          <li><a href="#" target="_blank"><img src="images/Google+.png" alt="google+" width="25" height="25"></a></li>
+          <li><a href="#" target="_blank"><img src="images/Instagram.png" alt="instagram" width="25" height="25"></a></li>
+          <li><a href="#" target="_blank"><img src="images/Tumblr.png" alt="tumblr" width="25" height="25"></a></li>
+          <li><a href="#" target="_blank"><img src="images/LinkedIn.png" alt="linkedin" width="25" height="25"></a></li>
         </ul>
       </li>
     </ul>
   </div>
 
-  <section id="definition">
+  <section id="definition" class="clearfix">
     <div class="main">
       <h1>e·laine <span class="smaller">윤정</span> lee</h1>
       <h2>/i-'lān yōōn-jeoŋ 'lē/</h2>
-      <p id="def-text"><i>aspring editor; <a class="show-pics">traveler</a>; writer at <a href="http://www.selectism.com/author/elainelee/">selectism</a></i></p>
+      <p id="def-text"><i>aspring editor; <a class="show-pics">traveler</a>; writer at <a href="http://www.selectism.com/author/elainelee/" target="_blank">selectism</a></i></p>
     </div>
 
     <ol>
@@ -177,44 +193,63 @@
         <h3 class="header" style="width: 160px;">Features / Profiles</h3>
         <ul>
           <li>
-            <a href="http://google.com">Link 1</a>
-            <p>description of this link goes here</p>
+            <span>Link 1</span>
+            <p>description of this link goes here <a target="_blank" href="http://google.com">link</a></p>
           </li>
           <li>
-            <a href="http://bing.com">Link 2</a>
-            <p>description of this link goes here here here</p>
+            <span>Link 2</span>
+            <p>description of this link goes here here <a target="_blank" href="http://bing.com">link</a></p>
           </li>
         </ul>  
       </li>
       <li class="def">
         <h3 class="header" style="width: 230px;">Fashion Collection Reviews</h3>
         <ul>
-          <li><a href="http://github.com">Github</a></li>
-          <li><a href="http://facebook.com">Facebook</a></li>
+          <li>
+            <span>More Stuff</span>
+            <p>description of this link goes here <a target="_blank" href="http://cnn.com">link</a></p>
+          </li>
+          <li>
+            <span>Facebook</span>
+            <p>description of this link goes here <a target="_blank" href="http://facebook.com">link</a></p>
+          </li>
         </ul>  
       </li>
       <li class="def">
         <h3 class="header" style="width: 250px;">Designer / Celebrity Interviews</h3>
         <ul>
-          <li><a href="http://cnn.com">CNN</a></li>
-          <li><a href="http://huffingtonpost.com">HuffPo</a></li>
+          <li>
+            <span>Something</span>
+            <p>description of this link goes here <a target="_blank" href="http://funnyordie.com">link</a></p>
+          </li>
+          <li>
+            <span>HuffPo</span>
+            <p>description of this link goes here <a target="_blank" href="http://huffingtonpost.com">link</a></p>
+          </li>
         </ul>  
       </li>
       <li class="def">
         <h3 class="header" style="width: 260px;">Architecture / Design Coverage</h3>
         <ul>
-          <li><a href="http://buzzfeed.com">Buzzfeed</a></li>
-          <li><a href="http://poorlydrawnlines.com">Poorly Drawn Lines</a></li>
+          <li>
+            <span>Buzzfeed</span>
+            <p>description of this link goes here <a target="_blank" href="http://buzzfeed.com">link</a></p>
+          </li>
+          <li>
+            <span>Poorly Drawn Lines</span>
+            <p>description of this link goes here <a target="_blank" href="http://poorlydrawnlines.com">link</a></p>
+          </li>
         </ul>  
       </li>
     </ol>
     
 
-
+    <br>
+    <footer><a target="_blank" href="http://www.nataliewee.com">made with ♥ by <img src="images/NW1.gif" width="20" height="20" alt="NW"></a></footer>
 
   </section> <!-- end section definition -->
 
-  <section id="travel">
+  <section id="travel" class="clearfix">
     <p>Travel pics</p>
     <div class="square"><a class="pic_group" title="here is a picture" rel="pic_group" href="travel_images/image1.jpeg"><img src="travel_images/image1.jpeg" alt=""></a></div>
     <div class="square"><a class="pic_group" title="here is another pic" rel="pic_group" href="travel_images/image2.jpg"><img src="travel_images/image2.jpg" alt=""></a></div>
@@ -223,10 +258,11 @@
     <div class="square"><a class="pic_group" title="here is another kitten" rel="pic_group" href="travel_images/image5.jpeg"><img src="travel_images/image5.jpeg" alt=""></a></div>
     <div class="square"><a class="pic_group" title="kitties!" rel="pic_group" href="travel_images/image6.jpeg"><img src="travel_images/image6.jpeg" alt=""></a></div>
     <div class="square"><a class="pic_group" title="giant kitty" rel="pic_group" href="travel_images/image7.jpeg"><img src="travel_images/image7.jpeg" alt=""></a></div>
-
+    
+    <br>
+    <footer><a target="_blank" href="http://www.nataliewee.com">made with ♥ by <img src="images/NW1.gif" width="20" height="20" alt="NW"></a></footer>
   </section> <!-- end section travel -->
-
-  </div> <!-- end div wrrapper -->
+  </div> <!-- end div wrapper -->
   <script>
 
     $(document).ready(function() {
@@ -258,11 +294,6 @@
       $('#navbar > ul > li > a').css({'border-bottom': 'none', 'color': 'gray'});
       $(this).css({'border-bottom': '3px solid #CD5A45', 'color': '#CD5A45'});
     });
-/*    $('.def > ul > li > p').hide();
-    $('.def > ul > li > span').click(function(){
-      $(this).parent().find('p').slideToggle();
-    });
-*/
     $('#social-links').click(function(){
 
       $('.dropdown').slideToggle();
@@ -272,27 +303,32 @@
       $('#travel').css('display','block');
       $('#navbar > ul > li > a').css({'border-bottom': 'none', 'color': 'gray'});
       $('#navbar > ul > li > a.show-pics').css({'border-bottom': '3px solid #CD5A45', 'color': '#CD5A45'});
+      $('.def > ul > li > p').slideUp();
+      $('.def > ul').slideUp();
     });
     $('.show-main').click(function(){
       $('#definition').css('visibility', 'visible');
       $('#travel').css('display','none');
       
     });
+    $('#navbar > ul > li').click(function(){
+      if ($(this).attr('id') != 'social-links') {
+        if ($('.dropdown').css('display') === 'block') {
+
+          $('.dropdown').slideToggle();
+        }
+
+      }
+
+    });
+    $('.def > ul > li > p').hide();
+    $('.def > ul > li > span').click(function(){
+
+      $(this).parent().find('p').slideToggle();
+    });
+
+    
 
   </script>
 </body>
 </html>
-
-
-<!--
-
-questions for elaine:
-
-1) do you want links to open up in a new tab or in the same page?
-
-for my reference: 
-
-1) on creating subdomains: 
-http://webapps.stackexchange.com/questions/42455/publishing-more-than-one-site-on-github-pages
-
-  -->
